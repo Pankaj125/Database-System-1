@@ -1,0 +1,14 @@
+mysql> 
+mysql> 
+mysql> insert into us_state values(35,'India','PN',3366,'yes',1111,222,1,7777777,55555);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into us_county values('Louisiana','abc',111,222,333);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> 
+mysql> insert into us_deaths values('Alabama','Autauga','2020-8-10',111);
+Query OK, 1 row affected (0.06 sec)
+
+mysql> 
+mysql> \t

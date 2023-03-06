@@ -1,0 +1,6 @@
+mysql> 
+mysql> 
+mysql> delete from us_state where state = 'Texas';
+ERROR 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails (`pvg0547`.`us_confirmed_cases`, CONSTRAINT `us_confirmed_cases_ibfk_1` FOREIGN KEY (`State`) REFERENCES `us_state` (`State`))
+mysql> 
+mysql> \t

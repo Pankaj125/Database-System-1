@@ -1,0 +1,16 @@
+mysql> 
+mysql> insert into us_state values(0011,'California',NULL,2022,'Washington',1990,55555,111,222,333);
+ERROR 1062 (23000): Duplicate entry 'California' for key 'us_state.PRIMARY'
+mysql> 
+mysql> insert into us_county values('Pune','xyz',55511,'444.111111111','7777.7777777777');
+ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`pvg0547`.`us_county`, CONSTRAINT `us_county_ibfk_1` FOREIGN KEY (`State`) REFERENCES `us_state` (`State`))
+mysql> 
+mysql> insert into us_county values('Illinois','somecounty',43597256945,417,677);
+ERROR 1264 (22003): Out of range value for column 'Population' at row 1
+mysql> 
+mysql> 
+mysql> insert into us_state values(0033,NULL,NULL,2021,'Arlington',2020,00000,777,333,111);
+ERROR 1048 (23000): Column 'State' cannot be null
+mysql> 
+mysql> 
+mysql> \t
