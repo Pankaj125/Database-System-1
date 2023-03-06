@@ -1,0 +1,61 @@
+     create table US_STATE
+     (
+     State_id INT,
+     State VARCHAR (50),
+     Abbreviation CHAR (2),
+     YearOfStatehood INT,
+     Capital VARCHAR (50),
+     Capital_Since INT,
+     LandArea DECIMAL(10,0),
+     IsPopulousCity varchar(10),
+     MunicipalPopulatiion INT,
+     MetroPopulatiion INT,
+     PRIMARY KEY(State)
+     );
+
+     create table US_COUNTY                     
+     (
+     State VARCHAR (50) NOT NULL, 
+     County VARCHAR(50) PRIMARY KEY, 
+     Population INT, 
+     Latitude decimal(50,10), 
+     Longitude decimal(50,10),
+     FOREIGN KEY (State) REFERENCES us_state(State)
+     );
+
+     create table us_confirmed_cases
+     (
+     State VARCHAR (50), 
+     County VARCHAR (50), 
+     TestDate DATE, 
+     PositiveCount INT,
+     Foreign Key (State) references us_state(State),
+     Foreign Key (County) references us_county(County)
+     );
+
+     CREATE TABLE us_deaths
+     (
+     State VARCHAR (50), 
+     County VARCHAR (50), 
+     ReportDate DATE, 
+     DeathCount INT,
+     Foreign Key (State) references us_state(State),
+     Foreign Key (County) references us_county(County)
+     );
+
+     CREATE TABLE VACCINATIONS
+     (
+     State VARCHAR (50), 
+     TotalDistributed INT,
+     TotalAdministered INT,
+     Distributed_per_100K INT,
+     Administered_per_100K INT,
+     People_with_1PLUS_Doses INT,
+     People_with_1PLUS_Doses_per_100K INT,
+     People_with_2PLUS_Doses INT,
+     People_with_2PLUS_Doses_per_100K INT,
+     Foreign Key (State) references us_state(State)
+     );
+     
+     
+
